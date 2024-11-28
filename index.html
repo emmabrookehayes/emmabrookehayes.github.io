@@ -269,7 +269,7 @@
 					<section class="wrapper style1 align-center">
 						<div class="inner medium">
 							<h2>Get in touch</h2>
-							<form method="post" action="#">
+							<form method="post" id="contactForm">
 								<div class="fields">
 									<div class="field half">
 										<label for="name">Name</label>
@@ -314,17 +314,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-			<form id="contactForm">
-				<input type="text" id="name" placeholder="Your Name" required />
-				<input type="email" id="email" placeholder="Your Email" required />
-				<textarea id="message" placeholder="Your Message" required></textarea>
-				<button type="submit">Send</button>
-			</form>
 			
 			<script>
 				emailjs.init('EIIKoYEJAKDLbtrdB'); // Replace with your EmailJS user ID
 			
-				document.getElementById('contactForm').addEventListener('submit', function (e) {
+				$('#submit').on('click', function (e) {
 					e.preventDefault();
 			
 					const name = document.getElementById('name').value;
